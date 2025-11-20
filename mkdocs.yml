@@ -1,6 +1,6 @@
 site_name: Docker Tutorial
-repo_url: https://github.com/infn-bari-school/docker-tutorial
-site_author: Marica Antonacci - marica.antonacci@ba.infn.it
+  #repo_url: https://github.com/infn-bari-school/docker-tutorial
+  #site_author: Marica Antonacci - marica.antonacci@ba.infn.it
 theme:
   name: material
   palette:
@@ -26,46 +26,46 @@ markdown_extensions:
   - attr_list
    
 nav:
-  - Intro: 
-    - Install docker engine on Ubuntu: 'intro/install.md'
-    - Docker info: 'intro/info.md'
-    - Run your first container: 'intro/hello-world.md'
-    - Where are Docker images stored?: 'intro/images.md'
-    - Docker container lifecycle: 'intro/container.md'
-  - Docker Container manipulation:
-    - Work with your first container: 'container/manipulation.md'
-  - Going further:
-    - Run a dockerized service: 'container/example.md'
-  - Environment variables:
-    - How to pass env variables to a container: 'container/env_vars.md'  
+  #- Intro: 
+    #    - Install docker engine on Ubuntu: 'intro/install.md'
+    #    - Docker info: 'intro/info.md'
+    #    - Run your first container: 'intro/hello-world.md'
+    #    - Where are Docker images stored?: 'intro/images.md'
+    #    - Docker container lifecycle: 'intro/container.md'
+    #  - Docker Container manipulation:
+    #    - Work with your first container: 'container/manipulation.md'
+    #  - Going further:
+    #    - Run a dockerized service: 'container/example.md'
+    #  - Environment variables:
+    #    - How to pass env variables to a container: 'container/env_vars.md'  
   - Persistent data:
     - Docker volumes and bind-mounts: 'data/volumes.md'
-    #- Docker volume plugins - an example: 'data/volume_plugin.md'
+    - Docker volume plugins - an example: 'data/volume_plugin.md'
     - Summary: 'data/volume_summary.md'
   - Container networking:
     - Bridge mode and port mapping: 'networking/networking.md'
-  - Health checks:
-    - How to add a health check to your docker container: 'container/health_checks.md'
-  - Docker web UI:
-    - Portainer: 'gui/portainer.md'
-  - Building images:
-    - Building interactively: 'image/intro/index.md'
-    - Dockerfiles:
-      - Overview of basic instructions : 'image/dockerfile/instructions.md'
-      - Write the first Dockerfile: 'image/dockerfile/first-dockerfile.md'
-      - The CMD and ENTRYPOINT verbs: 'image/dockerfile/cmd-entrypoint.md'
-      - Copying files during the build: 'image/dockerfile/copy.md'
-      - Exercise: 'image/dockerfile/exercise.md'
-    - Cache and dangling images:
-      - ... or what are those nasty <none> tags: 'image/cacheimages/cache-dangling.md'
-    - Docker Registry:
-      - Publishing images to the Docker hub: 'image/registry/dockerhub.md'
-    - multi-stage example:
-      - Our first multi-stage Dockerfile: 'image/multistage/multistage-example.md'
-  - CI/CD build automation: 
-    - How to use Gitlab CI/CD to build your image automatically: 'image/automation/index.md'  
-    - Use your own runner from a dedicated VM: 'image/automation/runner.md'
-    - Exercises: 'image/automation/exercises.md'
+      #  - Health checks:
+      #    - How to add a health check to your docker container: 'container/health_checks.md'
+      #  - Docker web UI:
+      #    - Portainer: 'gui/portainer.md'
+      #  - Building images:
+      #    - Building interactively: 'image/intro/index.md'
+      #    - Dockerfiles:
+      #      - Overview of basic instructions : 'image/dockerfile/instructions.md'
+      #      - Write the first Dockerfile: 'image/dockerfile/first-dockerfile.md'
+      #      - The CMD and ENTRYPOINT verbs: 'image/dockerfile/cmd-entrypoint.md'
+      #      - Copying files during the build: 'image/dockerfile/copy.md'
+      #      - Exercise: 'image/dockerfile/exercise.md'
+      #    - Cache and dangling images:
+      #      - ... or what are those nasty <none> tags: 'image/cacheimages/cache-dangling.md'
+      #    - Docker Registry:
+      #      - Publishing images to the Docker hub: 'image/registry/dockerhub.md'
+      #    - multi-stage example:
+      #      - Our first multi-stage Dockerfile: 'image/multistage/multistage-example.md'
+      #  - CI/CD build automation: 
+      #    - How to use Gitlab CI/CD to build your image automatically: 'image/automation/index.md'  
+      #    - Use your own runner from a dedicated VM: 'image/automation/runner.md'
+      #    - Exercises: 'image/automation/exercises.md'
 
  
-copyright: Copyright &copy; 2022 INFN
+copyright: Copyright &copy; 2025 INFN
