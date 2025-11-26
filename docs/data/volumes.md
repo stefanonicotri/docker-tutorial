@@ -72,7 +72,7 @@ Let's use our `nginx2` container created previously.
 
 !!! tip
     If you don't have this container running you can recreate it with the following command:
-    `docker container run -d -p 80:80 --name nginx2 nginx`
+    `docker container run -d -p 80:80 --name nginx2 harbor.cloud.infn.it/corso-docker/nginx`
 
 Let’s use the `docker exec` command to edit the welcome page and load it.
 
@@ -99,7 +99,7 @@ What happens? We can still see in the browser the changes that we made.
 Now... what if we stop this container and start another one and load the page?
 
 ```bash
-docker container run -d -p 8080:80 --name nginx3 nginx
+docker container run -d -p 8080:80 --name nginx3 harbor.cloud.infn.it/corso-docker/nginx
 ```
 !!! warning
     For this second container you need to specify a different host port, otherwise there will be a conflict and your container will not be started:
@@ -149,7 +149,7 @@ docker container rm -f nginx3
 
 Recreate it with the volume mounted, using the `--mount` directive as in the following:
 ```bash
-docker container run -d -p 8080:80 --name nginx3 --mount type=volume,source=myvol,destination=/usr/share/nginx/html nginx
+docker container run -d -p 8080:80 --name nginx3 --mount type=volume,source=myvol,destination=/usr/share/nginx/html harbor.cloud.infn.it/corso-docker/nginx
 ```
 
 !!! note
@@ -185,7 +185,7 @@ If we load the page again we will still see the html file that we edited in the 
 
 Now let's create __another__ container sharing the __same__ volume (we will now use port 8081, in order not to clash with the previous container): 
 ```bash
-docker container run -d -p 8081:80 --name nginx3-2 --mount type=volume,source=myvol,destination=/usr/share/nginx/html nginx
+docker container run -d -p 8081:80 --name nginx3-2 --mount type=volume,source=myvol,destination=/usr/share/nginx/html harbor.cloud.infn.it/corso-docker/nginx
 ```
 then check that we see the same content:
 ```bash
@@ -204,7 +204,7 @@ Now we will create a container running nginx using a bind mount (with the `type=
 Try the following command:
 
 ```bash
-docker container run -d -p 8088:80 --name nginx4 --mount type=bind,source=/tmp/nginx,destination=/usr/share/nginx/html nginx
+docker container run -d -p 8088:80 --name nginx4 --mount type=bind,source=/tmp/nginx,destination=/usr/share/nginx/html harbor.cloud.infn.it/corso-docker/nginx
 ```
 
 You will get an error since the path `/tmp/nginx` does not exist on the host:
@@ -222,7 +222,7 @@ mkdir /tmp/nginx
 Now re-run the command for creating the container with the `/usr/share/nginx/html` directory mapped to the local (on the host) `/tmp/nginx`:
 
 ```bash
-docker container run -d -p 8088:80 --name nginx4 --mount type=bind,source=/tmp/nginx,destination=/usr/share/nginx/html nginx
+docker container run -d -p 8088:80 --name nginx4 --mount type=bind,source=/tmp/nginx,destination=/usr/share/nginx/html harbor.cloud.infn.it/corso-docker/nginx
 ```
 
 If you inspect the container:
@@ -274,6 +274,6 @@ and then use your web browser to access wordpress on port 80.
 
 !!! tip
 - Create a volume `db_data` to provide persistent storage for the DBMS
-- Launch MariaDB (image name: `mariadb:10.6.4-focal`) with container name `db`, using the previously created volume, and pass environment variables to the container to configure it
+- Launch MariaDB (image name: `harbor.cloud.infn.it/corso-docker/mariadb:latest`) with container name `db`, using the previously created volume, and pass environment variables to the container to configure it
 - Inspect the MariaDB container finding its private IP
-- Launch WordPress (image name: `wordpress:latest`) with container name `wordpress`, and pass environment variables to the container to configure it (using as DB host the IP of the MariaDB container).
+- Launch WordPress (image name: `harbor.cloud.infn.it/corso-docker/wordpress:latest`) with container name `wordpress`, and pass environment variables to the container to configure it (using as DB host the IP of the MariaDB container).

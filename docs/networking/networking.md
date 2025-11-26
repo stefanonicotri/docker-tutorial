@@ -1,7 +1,7 @@
 Let's start from a new nginx docker container:
 
 ```bash
-docker container run -d --name nginx nginx
+docker container run -d --name nginx harbor.cloud.infn.it/corso-docker/nginx
 ```
 
 The `inspect` command provided details about the networking configuration of the container:
@@ -157,7 +157,7 @@ We need to publish the service port in the container to a port on our local netw
 So let's start another container with this option:
 
 ```bash
-docker container run -d --name nginx2 -p 80:80 nginx
+docker container run -d --name nginx2 -p 80:80 harbor.cloud.infn.it/corso-docker/nginx
 ```
 
 Look at the different description of the two containers:
@@ -373,8 +373,8 @@ and then use your web browser to access wordpress on port 8080.
 !!! tip
 - Create a volume `db_data` to provide persistent storage for the DBMS
 - Create a network
-- Launch MariaDB (image name: `mariadb:10.6.4-focal`) with container name `db`, using the previously created volume, attaching it to the previously created network and pass environment variables to the container to configure it
-- Launch WordPress (image name: `wordpress:latest`) with container name `wordpress`, and pass environment variables to the container to configure it
+- Launch MariaDB (image name: `harbor.cloud.infn.it/corso-docker/mariadb:latest`) with container name `db`, using the previously created volume, attaching it to the previously created network and pass environment variables to the container to configure it
+- Launch WordPress (image name: `harbor.cloud.infn.it/corso-docker/wordpress:latest`) with container name `wordpress`, and pass environment variables to the container to configure it
 - Use the automatic DNS resolution feature of the previously created network to connect the two containers
 
  
